@@ -1,0 +1,22 @@
+.menuIconLight{
+    color:rgb(24, 20, 20);
+    font-size: 50px !important;
+}
+.menuIconDark{
+    color:white;
+    font-size: 50px !important;
+}
+.themeIcon{
+    margin-left:10px;
+    font-size: 20px !important;
+}
+.themeIcon:hover{
+    cursor: pointer;
+}
+.lightTheme{
+    background-color: white;
+}
+.darkTheme{
+    background-color: rgb(24, 20, 20);
+    color: white;
+}

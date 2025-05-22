@@ -1,0 +1,23 @@
+.flex-row1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-row2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    height: 100vh;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
