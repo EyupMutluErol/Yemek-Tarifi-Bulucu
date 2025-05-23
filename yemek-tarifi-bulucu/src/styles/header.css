@@ -20,3 +20,6 @@
     background-color: rgb(24, 20, 20);
     color: white;
 }
+.searchIcon:hover{
+    cursor: pointer;
+}
