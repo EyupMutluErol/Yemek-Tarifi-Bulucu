@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/Header';
-import FoodCard from './components/foodCard';
+import FoodCard from './components/FoodCard';
 import Container from '@mui/material/Container';
 
 

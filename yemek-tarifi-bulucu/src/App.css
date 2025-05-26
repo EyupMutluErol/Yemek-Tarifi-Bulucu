@@ -2,11 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 .flex-row2{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 .flex-col{
     display: flex;
@@ -20,4 +22,8 @@
 body{
     margin: 0;
     padding: 0;
+}
+.card{
+    width: 350px;
+    margin: 30px;
 }
