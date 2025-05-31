@@ -8,11 +8,12 @@ import Container from '@mui/material/Container';
 
 
 
+
 function App() {
+
   return (
     <div className='wrapper'>
       <Container maxWidth="md">
-        <Header />
         <FoodCard/>
       </Container>
     </div>

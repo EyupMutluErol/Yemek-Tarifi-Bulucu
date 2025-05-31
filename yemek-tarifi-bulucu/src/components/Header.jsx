@@ -5,45 +5,54 @@ import TextField from '@mui/material/TextField';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import SearchIcon from '@mui/icons-material/Search';
-import Search from './Search';
 
+function Header({ onSearch }) {
+  const [isLight, setIsLight] = useState(false);
+  const [foodInput, setFoodInput] = useState('');
 
+  const root = document.getElementById('root');
 
-function Header() {
-    const [isLight,setIsLight] = useState(false);
-    const [food,setFood] = useState('');
-    const [showFood,setShowFood] = useState('');
-    const root = document.getElementById('root');
-    const changeTheme = () => {
-        setIsLight(!isLight);
-        root.className = isLight ? 'lightTheme' : 'darkTheme';
+  const changeTheme = () => {
+    setIsLight(!isLight);
+    root.className = isLight ? 'lightTheme' : 'darkTheme';
+  };
+
+  const handleSearchClick = () => {
+    onSearch(foodInput);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      onSearch(foodInput);
     }
+  };
 
-    const handleChangeFood = e => {
-      setFood(e.target.value);
-    }
-    const handleSearchClick = () =>{
-      setShowFood(food);
-    }
-    
   return (
-    <div className='flex-row2'>
+    <div className="flex-row2">
       <div>
-        <MenuBookIcon className={isLight ?  'menuIconDark':'menuIconLight'} />
+        <MenuBookIcon className={isLight ? 'menuIconDark' : 'menuIconLight'} />
       </div>
-      <div className='flex-row1'>
-        <TextField label="Tarif Ara" variant="standard" size="medium" onChange={handleChangeFood}/><SearchIcon className='searchIcon' onClick={handleSearchClick}/>
-        {
-            isLight ? <LightModeIcon className='themeIcon' onClick={changeTheme}/> : <DarkModeIcon className='themeIcon' onClick={changeTheme}/>  
-        }
-        
-        {
-          showFood && <Search food={showFood}/>
-        }
-        
+      <div className="flex-row1">
+        <TextField
+          label="Search Meal"
+          variant="standard"
+          size="medium"
+          onChange={(e)=>{
+            setFoodInput(e.target.value);
+            onSearch(foodInput);
+          }}
+          onKeyDown={handleKeyDown}
+          
+        />
+        <SearchIcon className="searchIcon" onClick={handleSearchClick} />
+        {isLight ? (
+          <LightModeIcon className="themeIcon" onClick={changeTheme} />
+        ) : (
+          <DarkModeIcon className="themeIcon" onClick={changeTheme} />
+        )}
       </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
